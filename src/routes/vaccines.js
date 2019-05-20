@@ -1,12 +1,14 @@
-
 import vaccineController from '../controllers/vaccines'
+const verifyAddingVaccination = require('../middlewares/errorHandlers/verifyAddingVaccination');
+const verifyUpdatingVaccination = require('../middlewares/errorHandlers/verifyUpdatingVaccination');
+const serverErrorHandler = require('../middlewares/errorHandlers/serverErrorHandler');
 
 function setupPatientRoutes(router){
-	router.get("/", vaccineController.getMany)
-	// router.post('/', vaccineController.createOne)
-	// router.get('/:id', vaccineController.getOne)
-	// router.put('/:id', vaccineController.updateOne)
-	// router.delete('/:id', vaccineController.removeOne)
+	router.get("/", serverErrorHandler(vaccineController.getMany))
+	router.get('/:id', serverErrorHandler(vaccineController.getOne))
+	router.post('/', verifyAddingVaccination, serverErrorHandler(vaccineController.createOne))
+	router.put('/:id', verifyUpdatingVaccination, serverErrorHandler(vaccineController.updateOne))
+	router.delete('/:id', serverErrorHandler(vaccineController.removeOne))
 }
 
 export default setupPatientRoutes

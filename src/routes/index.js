@@ -7,6 +7,7 @@ import setupImmunizationRecordRoutes from './immunization_records'
 import setupImmunizationScheduleRoutes from './immunization_schedules'
 import setupImmunizationRecordEditRequestRoutes from './immunization_record_edit_requests'
 
+
 function setupRoutes(app){
 	// Staffs
 	const staffRouter = express.Router()
@@ -46,6 +47,7 @@ function setupRoutes(app){
 	
 	app.get('/', async (req, res) => {
 		console.log('root route called')
+		res.status(200).end("Hello World")
 	})
 	
 }
