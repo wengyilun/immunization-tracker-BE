@@ -27,7 +27,13 @@
     "mysql2": "^1.6.5",
     "pg": "^7.11.0",
     "sqlite3": "^4.0.7",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0"
+
   },
   "babel": {
     "presets": [
@@ -45,11 +51,6 @@
     ]
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0"
 
   }
 }
