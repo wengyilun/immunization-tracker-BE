@@ -1,6 +1,6 @@
 import vaccineController from '../controllers/vaccines'
-const verifyAddingVaccination = require('../middlewares/errorHandlers/verifyAddingVaccination');
-const verifyUpdatingVaccination = require('../middlewares/errorHandlers/verifyUpdatingVaccination');
+const verifyAddingVaccination = require('../middlewares/errorHandlers/vaccination/verifyAddingVaccination');
+const verifyUpdatingVaccination = require('../middlewares/errorHandlers/vaccination/verifyUpdatingVaccination');
 const serverErrorHandler = require('../middlewares/errorHandlers/serverErrorHandler');
 
 function setupPatientRoutes(router){
