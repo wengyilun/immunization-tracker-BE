@@ -13,7 +13,7 @@ async function startServer({port = process.env.SERVER_PORT} = {}){
 	setupRoutes(app)
 	
 	app.listen(port, () => {
-		console.log("Server listening at 3000")
+		console.log(`\n** server up on port ${port} **\n`)
 	})
 }
 
