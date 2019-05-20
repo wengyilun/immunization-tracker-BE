@@ -1,8 +1,8 @@
 import knex from 'knex'
 import knexConfig from '../../knexfile.js'
-const db = knex(knexConfig.development)
 
-const dao = {
-}
+const dbEnv = process.env.DB_ENV || 'development';
 
-export default db
+module.exports = knex(knexConfig[dbEnv]);
+
+
