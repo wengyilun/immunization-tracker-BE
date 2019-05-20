@@ -1,5 +1,7 @@
-if(process.env.node_env === "production"){
-require('./dist')
+if(process.env.node_env === "development"){
+	require('nodemon')({script: './dev.js'})
+	console.log('dev!!!!')
 }else{
-require('nodemon')({script: './dev.js'})
+	require('./dist')
+	console.log('production!!!!')
 }
