@@ -44,7 +44,6 @@ function setupRoutes(app){
 	setupImmunizationEditRequestRoutes(editRequestRouter)
 	app.use('/api/immunization_edit_requests', editRequestRouter)
 	
-	
 	app.get('/', async (req, res) => {
 		console.log('root route called')
 		res.status(200).end("Hello World")

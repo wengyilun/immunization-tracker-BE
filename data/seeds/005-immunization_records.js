@@ -5,9 +5,8 @@ const hashedPassword = bcrypt.hashSync('123', 4);
 
 const createFakerRecords = () => ({
   received_date: faker.date.past(),
-  dose_num: Math.floor(Math.random(3)) + 1,
   note: faker.lorem.sentences(),
-  vaccine_id: Math.floor(Math.random(10)) + 1,
+  vaccine_dose_id: Math.floor(Math.random(10)) + 1,
   patient_id: Math.floor(Math.random(10)) + 1,
   clinic_id: Math.floor(Math.random(10)) + 1,
 });

@@ -45,10 +45,22 @@ export const removeOne = model => async (req, res) => {
     }
 }
 
+export const registerUser = model => async (req, res) => {
+    const lastId = await db(model).insert(req.body)
+    res.status(201).json(lastId)
+};
+
+export const loginUser = model => async (req, res) => {
+    const lastId = await db(model).insert(req.body)
+    res.status(201).json(lastId)
+};
+
 export const crudControllers = model => ({
   removeOne: removeOne(model),
   updateOne: updateOne(model),
   getMany: getMany(model),
   getOne: getOne(model),
-  createOne: createOne(model)
+  createOne: createOne(model),
+  registerUser: registerUser(model),
+  loginUser: loginUser(model)
 })

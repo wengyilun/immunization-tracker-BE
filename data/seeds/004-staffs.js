@@ -3,7 +3,8 @@ const bcrypt = require('bcryptjs');
 
 const hashedPassword = bcrypt.hashSync('123', 4);
 
-const createFakerStaffs = () => ({
+const createFakerStaffs = (idx) => ({
+  username: faker.name.firstName() + idx,
   first_name: faker.name.firstName(),
   last_name: faker.name.lastName(),
   email: faker.internet.email(),
@@ -20,7 +21,7 @@ exports.seed = function(knex, Promise) {
     const fakeStaffs = []
     
     for (let i = 0; i < 20; i++) {
-      fakeStaffs.push(createFakerStaffs());
+      fakeStaffs.push(createFakerStaffs(i + 1));
     }
     return knex('staffs').insert(fakeStaffs)
   });

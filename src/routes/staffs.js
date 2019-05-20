@@ -12,6 +12,8 @@ function setupStaffRoutes(router){
 	router.get('/:id', serverErrorHandler(staffController.getOne))
 	router.put('/:id', verifyUpdatingStaffs, serverErrorHandler(staffController.updateOne))
 	router.delete('/:id', serverErrorHandler(staffController.removeOne))
+	
+	
 }
 
 export default setupStaffRoutes
