@@ -14,4 +14,4 @@ require('dotenv').config();
 // const logLevel = process.env.LOG_LEVEL || (notTest ? 'info' : 'warn')
 
 
-(0, _start2.default)({ port: process.env.PORT || 3000 });
+(0, _start2.default)(process.env.PORT || 8000);

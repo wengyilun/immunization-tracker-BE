@@ -3,8 +3,8 @@ import cors from 'cors'
 import helmet from 'helmet'
 import setupRoutes from './routes'
 
-async function startServer({port = process.env.SERVER_PORT} = {}){
-	port = 3000;
+async function startServer(port){
+	// port = 3000;
 	const app = express()
 	app.use(helmet())
 	app.use(cors())
@@ -13,7 +13,7 @@ async function startServer({port = process.env.SERVER_PORT} = {}){
 	setupRoutes(app)
 	
 	app.listen(port, () => {
-		console.log(`\n** server up on port ${port} **\n`)
+		console.log(`\n** HiHi server up on port ${port} **\n`)
 	})
 }
 

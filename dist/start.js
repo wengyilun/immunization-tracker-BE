@@ -22,8 +22,8 @@ var _routes2 = _interopRequireDefault(_routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-async function startServer({ port = process.env.SERVER_PORT } = {}) {
-	port = 3000;
+async function startServer(port) {
+	// port = 3000;
 	const app = (0, _express2.default)();
 	app.use((0, _helmet2.default)());
 	app.use((0, _cors2.default)());
@@ -32,7 +32,7 @@ async function startServer({ port = process.env.SERVER_PORT } = {}) {
 	(0, _routes2.default)(app);
 
 	app.listen(port, () => {
-		console.log(`\n** server up on port ${port} **\n`);
+		console.log(`\n** HiHi server up on port ${port} **\n`);
 	});
 }
 
