@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "restart": "rimraf dist && yarn build && yarn start",
-    "start": "node ."
+    "start": "cross-env NODE_ENV=production node .",
+    "dev": "node .",
+    "build": "babel --ignore __tests__,__mocks__ --out-dir dist src",
+    "test": "cd .. && npm run test:server --silent",
+    "now-build": "echo \"build happens before deploy\"",
+    "now-start": "node ."
   },
   "author": "",
   "license": "ISC",
@@ -23,17 +24,7 @@
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.16.5",
-    "mysql": "^2.17.1",
-    "mysql2": "^1.6.5",
-    "pg": "^7.11.0",
-    "sqlite3": "^4.0.7",
-    "nodemon": "^1.18.3",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0"
-
+    "sqlite3": "^4.0.7"
   },
   "babel": {
     "presets": [
@@ -51,6 +42,11 @@
     ]
   },
   "devDependencies": {
-
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.18.3"
   }
 }
