@@ -5,7 +5,7 @@ import setupPatientRoutes from './patients'
 import setupVaccineRoutes from './vaccines'
 import setupImmunizationRecordRoutes from './immunization_records'
 import setupVaccineDosesSchedulesRoutes from './vaccine_doses_schedules'
-import setupImmunizationRecordEditRequestRoutes from './immunization_record_edit_requests'
+import setupImmunizationEditRequestRoutes from './immunization_edit_requests'
 
 
 function setupRoutes(app){
@@ -41,8 +41,8 @@ function setupRoutes(app){
 	
 	// Immunization edit request
 	const editRequestRouter = express.Router()
-	setupImmunizationRecordEditRequestRoutes(editRequestRouter)
-	app.use('/api/immunization_record_edit_requests', editRequestRouter)
+	setupImmunizationEditRequestRoutes(editRequestRouter)
+	app.use('/api/immunization_edit_requests', editRequestRouter)
 	
 	
 	app.get('/', async (req, res) => {
