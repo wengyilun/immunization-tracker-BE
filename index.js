@@ -1,5 +1,5 @@
 if(process.env.node_env === "production"){
-require('./src')
+require('./dist')
 }else{
 require('nodemon')({script: './dev.js'})
 }
